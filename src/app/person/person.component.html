@@ -1,0 +1,52 @@
+<div class="page-header">
+  <div>
+    <h4>{{'person.title' | translate}}</h4>
+  </div>
+
+  <div class="results-per-page">
+    <div class="form-group">
+      <select class="form-control" [(ngModel)]="perPage" (change)="getPersons()" name="perPage"
+        id="perPage">
+        <option *ngFor="let option of perPageOptions" [value]="option">{{option}}</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div>
+  <table id="mytable" class="table table-bordred table-striped">
+    <thead>
+      <th>{{'person.firstName' | translate}}</th>
+      <th>{{'person.lastName' | translate}}</th>
+      <th>{{'person.email' | translate}}</th>
+      <th>{{'person.city' | translate}}</th>
+      <th>{{'person.phone' | translate}}</th>
+      <th>
+        <button class="btn btn-xs btn-secondary btn-controls"><span (click)="openSavePersonModal()" title="New"><i
+              class="fa fa-plus"></i> {{'add' | translate}}</span></button>
+      </th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of result | async">
+        <td>{{ person.firstName }}</td>
+        <td>{{ person.lastName }}</td>
+        <td>{{ person.email }}</td>
+        <td>{{ person.city }}</td>
+        <td>{{ person.phone }}</td>
+        <td>
+          <span class="btn-controls">
+            <span title="Edit" (click)="openSavePersonModal(person)"><i class="fa fa-edit"></i> {{'edit' | translate}}</span>
+            <span title="Delete" style="padding-left: 15px;" (click)="openRemovePersonModal(person)"><i
+                class="fa fa-trash"></i> {{'delete' | translate}}</span>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pagination">
+    <ngb-pagination [collectionSize]="totalNumberOfRecords" [(page)]="pageNumber" [pageSize]="perPage"
+      (pageChange)="pageChange($event)">
+    </ngb-pagination>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="row content">
+        <div class="col-sm-3 sidenav">
+            <h4>{{'options' | translate}}</h4>
+            <div class="form-group">
+                <label>{{'language' | translate}}:</label>
+                <select class="form-control" [(ngModel)]="lang" (change)="useLang()" name="language"
+                    id="language">
+                    <option *ngFor="let lang of langKeys" [value]="lang">{{lang}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-sm-9">
+            <app-notification></app-notification>
+            <app-person></app-person>
+
+
+        </div>
+    </div>
+</div>

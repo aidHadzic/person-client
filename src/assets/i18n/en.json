@@ -1,0 +1,25 @@
+{
+    "person": {
+        "title": "Persons",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "Email",
+        "phone": "Phone",
+        "city": "City",
+        "action": {
+            "save": "Save Person",
+            "remove": "Remove Person",
+            "fetchError": "Error while fetching persons.",
+            "saveSuccess": "Successfully saved person {{firstName}} {{lastName}}.",
+            "saveError": "Error while persisting person.",
+            "removeSuccess": "Successfully removed person {{firstName}} {{lastName}}.",
+            "removeError": "Error while removing person."
+        }
+    },
+    "language": "Language",
+    "options": "Options",
+    "resultsPerPage": "Results per page",
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete"
+}

@@ -1,0 +1,17 @@
+.asterisk-required {
+    color: red;
+}
+
+.results-per-page {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-controls {
+    float: right;
+}

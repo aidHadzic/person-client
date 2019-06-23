@@ -1,0 +1,3 @@
+<div *ngIf="activeNotification">
+    <ngb-alert [dismissible]="activeNotification.closable" [type]="activeNotification.type">{{activeNotification.message}}</ngb-alert>
+</div>
